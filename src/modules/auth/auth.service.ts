@@ -66,8 +66,9 @@ export class AuthService {
       role: user.role,
     };
 
-    return jwt.sign(payload, config.jwtSecret, {
-      expiresIn: config.jwtExpiresIn,
-    });
+    const secret = config.jwtSecret;
+    const expiresIn = config.jwtExpiresIn;
+
+    return jwt.sign(payload, secret, { expiresIn } as jwt.SignOptions);
   }
 }

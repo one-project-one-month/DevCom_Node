@@ -38,7 +38,7 @@ export class UserController {
     });
   });
 
-  getAllUsers = asyncHandler(async (req: Request, res: Response) => {
+  getAllUsers = asyncHandler(async (_req: Request, res: Response) => {
     const users = await this.userService.getAllUsers();
 
     res.status(HTTP_STATUS.OK).json({

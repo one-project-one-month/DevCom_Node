@@ -21,7 +21,7 @@ const limiter = rateLimit({
 });
 app.use("/api/", limiter);
 
-app.get("/health", (req, res) => {
+app.get("/health", (_req, res) => {
   res.status(200).json({
     success: true,
     message: "Server is running",
@@ -31,7 +31,7 @@ app.get("/health", (req, res) => {
 
 app.use("/api", routes);
 
-app.use((req, res) => {
+app.use((_req, res) => {
   res.status(404).json({
     success: false,
     message: "Route not found",

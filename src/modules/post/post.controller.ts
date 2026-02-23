@@ -5,7 +5,7 @@ import { HTTP_STATUS } from "../../common/constants";
 export class PostController {
   constructor() {}
 
-  createPost = asyncHandler(async (req: Request, res: Response) => {
+  createPost = asyncHandler(async (_req: Request, res: Response) => {
     /**
      * TODO: Implement create post functionality
      * 
@@ -24,7 +24,7 @@ export class PostController {
     });
   });
 
-  getPost = asyncHandler(async (req: Request, res: Response) => {
+  getPost = asyncHandler(async (_req: Request, res: Response) => {
     /**
      * TODO: Implement get single post functionality
      * 
@@ -42,7 +42,7 @@ export class PostController {
     });
   });
 
-  updatePost = asyncHandler(async (req: Request, res: Response) => {
+  updatePost = asyncHandler(async (_req: Request, res: Response) => {
     /**
      * TODO: Implement update post functionality
      * 
@@ -63,7 +63,7 @@ export class PostController {
     });
   });
 
-  deletePost = asyncHandler(async (req: Request, res: Response) => {
+  deletePost = asyncHandler(async (_req: Request, res: Response) => {
     /**
      * TODO: Implement delete post functionality
      * 
@@ -82,7 +82,7 @@ export class PostController {
     });
   });
 
-  getAllPosts = asyncHandler(async (req: Request, res: Response) => {
+  getAllPosts = asyncHandler(async (_req: Request, res: Response) => {
     /**
      * TODO: Implement get all posts functionality
      * 

@@ -5,7 +5,7 @@ import { HTTP_STATUS } from "../../common/constants";
 export class ReactionController {
   constructor() {}
 
-  toggleReaction = asyncHandler(async (req: Request, res: Response) => {
+  toggleReaction = asyncHandler(async (_req: Request, res: Response) => {
     /**
      * TODO: Implement toggle reaction functionality
      * 
@@ -26,7 +26,7 @@ export class ReactionController {
     });
   });
 
-  getReactionCount = asyncHandler(async (req: Request, res: Response) => {
+  getReactionCount = asyncHandler(async (_req: Request, res: Response) => {
     /**
      * TODO: Implement get reaction count functionality
      * 
@@ -43,7 +43,7 @@ export class ReactionController {
     });
   });
 
-  checkUserReaction = asyncHandler(async (req: Request, res: Response) => {
+  checkUserReaction = asyncHandler(async (_req: Request, res: Response) => {
     /**
      * TODO: Implement check user reaction functionality
      * 
