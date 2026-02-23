@@ -2,7 +2,6 @@ import { Request, Response } from "express";
 import { AuthService } from "./auth.service";
 import { registerSchema, loginSchema } from "./auth.dto";
 import { asyncHandler } from "../../common/utils/asyncHandler";
-import { AppError } from "../../common/exceptions/AppError";
 import { HTTP_STATUS } from "../../common/constants";
 
 export class AuthController {

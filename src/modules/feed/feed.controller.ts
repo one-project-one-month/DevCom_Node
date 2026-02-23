@@ -5,7 +5,7 @@ import { HTTP_STATUS } from "../../common/constants";
 export class FeedController {
   constructor() {}
 
-  getGlobalFeed = asyncHandler(async (req: Request, res: Response) => {
+  getGlobalFeed = asyncHandler(async (_req: Request, res: Response) => {
     /**
      * TODO: Implement global feed functionality
      * 

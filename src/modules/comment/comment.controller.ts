@@ -5,7 +5,7 @@ import { HTTP_STATUS } from "../../common/constants";
 export class CommentController {
   constructor() {}
 
-  createComment = asyncHandler(async (req: Request, res: Response) => {
+  createComment = asyncHandler(async (_req: Request, res: Response) => {
     /**
      * TODO: Implement create comment functionality
      * 
@@ -26,7 +26,7 @@ export class CommentController {
     });
   });
 
-  getComment = asyncHandler(async (req: Request, res: Response) => {
+  getComment = asyncHandler(async (_req: Request, res: Response) => {
     /**
      * TODO: Implement get single comment functionality
      * 
@@ -44,7 +44,7 @@ export class CommentController {
     });
   });
 
-  updateComment = asyncHandler(async (req: Request, res: Response) => {
+  updateComment = asyncHandler(async (_req: Request, res: Response) => {
     /**
      * TODO: Implement update comment functionality
      * 
@@ -64,7 +64,7 @@ export class CommentController {
     });
   });
 
-  deleteComment = asyncHandler(async (req: Request, res: Response) => {
+  deleteComment = asyncHandler(async (_req: Request, res: Response) => {
     /**
      * TODO: Implement delete comment functionality
      * 
@@ -83,7 +83,7 @@ export class CommentController {
     });
   });
 
-  getCommentsByPost = asyncHandler(async (req: Request, res: Response) => {
+  getCommentsByPost = asyncHandler(async (_req: Request, res: Response) => {
     /**
      * TODO: Implement get comments by post functionality
      * 

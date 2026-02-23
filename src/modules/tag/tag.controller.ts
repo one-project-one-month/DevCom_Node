@@ -5,7 +5,7 @@ import { HTTP_STATUS } from "../../common/constants";
 export class TagController {
   constructor() {}
 
-  getAllTags = asyncHandler(async (req: Request, res: Response) => {
+  getAllTags = asyncHandler(async (_req: Request, res: Response) => {
     /**
      * TODO: Implement get all tags functionality
      * 
@@ -21,7 +21,7 @@ export class TagController {
     });
   });
 
-  getTagById = asyncHandler(async (req: Request, res: Response) => {
+  getTagById = asyncHandler(async (_req: Request, res: Response) => {
     /**
      * TODO: Implement get single tag functionality
      * 
@@ -38,7 +38,7 @@ export class TagController {
     });
   });
 
-  deleteTag = asyncHandler(async (req: Request, res: Response) => {
+  deleteTag = asyncHandler(async (_req: Request, res: Response) => {
     /**
      * TODO: Implement delete tag functionality
      * 
