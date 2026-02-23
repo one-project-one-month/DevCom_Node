@@ -1,0 +1,17 @@
+node_modules
+dist
+.env
+.env.local
+*.log
+logs
+.git
+.github
+.vscode
+.idea
+coverage
+*.tsbuildinfo
+README.md
+SETUP.md
+tests
+*.test.ts
+*.spec.ts
