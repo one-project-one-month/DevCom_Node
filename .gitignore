@@ -1,7 +1,5 @@
 node_modules/
 dist/
-.env
-.env.local
 *.log
 logs/
 .DS_Store
@@ -9,3 +7,4 @@ logs/
 .idea/
 coverage/
 *.tsbuildinfo
+config.bat
