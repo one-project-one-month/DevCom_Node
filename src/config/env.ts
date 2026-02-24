@@ -17,6 +17,13 @@ export const config = {
     apiSecret: (process.env.CLOUDINARY_API_SECRET || "") as string,
   },
   
+  facebook: {
+    appId: (process.env.FACEBOOK_APP_ID || "") as string,
+    appSecret: (process.env.FACEBOOK_APP_SECRET || "") as string,
+    pageId: (process.env.FACEBOOK_PAGE_ID || "") as string,
+    pageAccessToken: (process.env.FACEBOOK_PAGE_ACCESS_TOKEN || "") as string,
+  },
+  
   rateLimitWindowMs: parseInt(process.env.RATE_LIMIT_WINDOW_MS || "900000", 10),
   rateLimitMax: parseInt(process.env.RATE_LIMIT_MAX || "100", 10),
 };

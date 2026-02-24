@@ -14,8 +14,11 @@ export class PostController {
      * - Get authenticated user from req.user
      * - Create post in database with author reference
      * - Handle tag creation/linking
+     * - Post to Facebook Page automatically using FacebookService
+     *   Example: await facebookService.createPagePost({ title, content, imageUrl })
      * - Return created post with populated author and tags
      * - Handle errors appropriately
+     * - Note: Facebook posting should not block the response if it fails
      */
     
     res.status(HTTP_STATUS.CREATED).json({
