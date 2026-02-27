@@ -1,58 +1,44 @@
 import { Request, Response } from "express";
 import { asyncHandler } from "../../common/utils/asyncHandler";
 import { HTTP_STATUS } from "../../common/constants";
+import { TagService } from "./tag.service";
 
 export class TagController {
-  constructor() {}
+  private tagService: TagService;
+  constructor() {
+    this.tagService = new TagService();
+  }
+
+  createTag = asyncHandler(async (req: Request, res: Response) => {
+    console.log("Creating tag with data:", req.body);
+    const result = await this.tagService.createTag(req.body);
+    res.status(HTTP_STATUS.CREATED).json({
+      success: true,
+      data: result,
+    });
+  });
 
   getAllTags = asyncHandler(async (_req: Request, res: Response) => {
-    /**
-     * TODO: Implement get all tags functionality
-     * 
-     * Requirements:
-     * - Fetch all tags from database
-     * - Sort tags alphabetically by name
-     * - Return tags array with id, name, and timestamps
-     */
-    
+    const result = await this.tagService.getAllTags();
     res.status(HTTP_STATUS.OK).json({
       success: true,
-      data: {},
+      data: result,
     });
   });
 
-  getTagById = asyncHandler(async (_req: Request, res: Response) => {
-    /**
-     * TODO: Implement get single tag functionality
-     * 
-     * Requirements:
-     * - Get tag ID from req.params.id
-     * - Fetch tag from database by ID
-     * - Return tag data
-     * - Handle case when tag not found
-     */
-    
+  deleteTag = asyncHandler(async (req: Request, res: Response) => {
+    const { id } = req.params;
+    const tag = await this.tagService.deleteTagById(id);
+    if (!tag) {
+      return res.status(HTTP_STATUS.NOT_FOUND).json({
+        success: false,
+        message: "Tag not found",
+      });
+    }
     res.status(HTTP_STATUS.OK).json({
       success: true,
-      data: {},
+      data: tag,
     });
-  });
-
-  deleteTag = asyncHandler(async (_req: Request, res: Response) => {
-    /**
-     * TODO: Implement delete tag functionality
-     * 
-     * Requirements:
-     * - Get tag ID from req.params.id
-     * - Verify tag exists
-     * - Delete tag from database
-     * - Return success message
-     * - Note: Only admin can delete tags (authorization handled in routes)
-     */
-    
-    res.status(HTTP_STATUS.OK).json({
-      success: true,
-      data: {},
-    });
+    return;
   });
 }
