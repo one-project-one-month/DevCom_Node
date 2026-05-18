@@ -5,6 +5,7 @@ export interface IComment extends Document {
   post: mongoose.Types.ObjectId;
   author: mongoose.Types.ObjectId;
   parent_comment_id?: mongoose.Types.ObjectId;
+  replies?: IComment[];
 }
 
 const CommentSchema = new Schema<IComment>(
